@@ -1,0 +1,12 @@
+name: My First Workflow
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wyświetl komunikat
+        run: echo "Job 1: Pierwsze uruchomienie workflow!"
