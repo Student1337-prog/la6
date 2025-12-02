@@ -1,12 +1,19 @@
-name: My First Workflow
+name: Workflow z dwoma jobami
 
 on:
   push:
   workflow_dispatch:
 
 jobs:
-  hello:
+  job1:
     runs-on: ubuntu-latest
     steps:
-      - name: Wyświetl komunikat
-        run: echo "Job 1: Pierwsze uruchomienie workflow!"
+      - name: Pierwszy job
+        run: echo "Job 1: Wykonałem się jako pierwszy!"
+
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1     
+    steps:
+      - name: Drugi job
+        run: echo "Job 2: Wykonałem się dopiero po job1!"
