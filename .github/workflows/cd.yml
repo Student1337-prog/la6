@@ -11,7 +11,7 @@ jobs:
       run: | 
         echo "OWNER_LC=${OWNER,,}" >>${GITHUB_ENV} 
       env: 
-        OWNER: "${{github.repository_owner}}"
+        OWNER: "Student1337-prog"
     - uses: actions/checkout@v4
     - name: Login to GHCR
       run: echo "${{ github.token }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
